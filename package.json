@@ -4,13 +4,16 @@
   "description": "Testing of Lighthouse",
   "main": "index.js",
   "dependencies": {
-    "lighthouse": "^11.7.1"
+    "lighthouse": "^11.7.1",
+    "puppeteer": "^22.6.5"
   },
   "scripts": {
-    "example.com": "node example.com.js"
+    "example.com": "node example.com.js",
+    "puppeteer": "node puppeteer.js"
   },
   "devDependencies": {},
   "keywords": [],
+  "type": "module",
   "author": "Fernando Karnagi <fkarnagi@gmail.com>",
   "license": "ISC"
 }
