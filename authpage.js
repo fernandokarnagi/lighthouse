@@ -1,16 +1,15 @@
 import fs from "fs";
 import lighthouse from "lighthouse";
-import * as chromeLauncher from "chrome-launcher";
 import puppeteer from "puppeteer";
 
 async function login(page, origin) {
   await page.goto(origin);
-  await page.waitForSelector('input[type="email"]', { visible: true });
+  await page.waitForSelector('input[name="email"]', { visible: true });
 
   // Fill in and submit login form.
-  const emailInput = await page.$('input[type="email"]');
+  const emailInput = await page.$('input[name="email"]');
   await emailInput.type("fkarnagi@gmail.com");
-  const passwordInput = await page.$('input[type="password"]');
+  const passwordInput = await page.$('input[name="password"]');
   await passwordInput.type("password");
   await Promise.all([
     page.$eval(".form fv-plugins-bootstrap fv-plugins-framework", (form) =>
