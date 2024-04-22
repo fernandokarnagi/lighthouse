@@ -34,7 +34,10 @@ async function logout(page, origin) {
 
   // Go to mytax page
   await page.goto("https://mytax.iras.gov.sg/ESVWeb/default.aspx");
-  await page.waitForSelector("td > .common-login-padding", { visible: true });
+  await page.waitForSelector("td > .common-login-padding", {
+    visible: true,
+    timeout: 10000,
+  });
 
   // // Setup the browser session to be logged into our site.
   // await login(page, "https://app.resolve-technologies.com");
