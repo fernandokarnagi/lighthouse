@@ -32,11 +32,15 @@ async function logout(page, origin) {
   });
   const page = await browser.newPage();
 
-  // Setup the browser session to be logged into our site.
-  await login(page, "https://app.resolve-technologies.com");
+  // Go to mytax page
+  await page.goto("https://mytax.iras.gov.sg/ESVWeb/default.aspx");
+  await page.waitForSelector("td > .common-login-padding", { visible: true });
 
-  // The local server is running on port 10632.
-  const url = "https://app.resolve-technologies.com/admin/dashboard";
+  // // Setup the browser session to be logged into our site.
+  // await login(page, "https://app.resolve-technologies.com");
+
+  // // The local server is running on port 10632.
+  // const url = "https://app.resolve-technologies.com/admin/dashboard";
 
   // Direct Lighthouse to use the same Puppeteer page.
   // Disable storage reset so login session is preserved.
@@ -58,5 +62,6 @@ async function logout(page, origin) {
     runnerResult.lhr.categories.performance.score * 100
   );
 
-  await chrome.kill();
+  // Direct Puppeteer to close the browser as we're done with it.
+  await browser.close();
 })();

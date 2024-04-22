@@ -10,7 +10,7 @@
   "scripts": {
     "example.com": "node example.com.js",
     "facebook.com": "node facebook.com.js",
-    "authpage": "node authpage.js",
+    "mytax": "node mytax.js",
     "puppeteer": "node puppeteer.js"
   },
   "devDependencies": {},
