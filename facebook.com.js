@@ -10,11 +10,11 @@ import * as chromeLauncher from "chrome-launcher";
     onlyCategories: ["performance"],
     port: chrome.port,
   };
-  const runnerResult = await lighthouse("https://example.com", options);
+  const runnerResult = await lighthouse("https://www.facebook.com", options);
 
   // `.report` is the HTML report as a string
   const reportHtml = runnerResult.report;
-  fs.writeFileSync("lhreport.html", reportHtml);
+  fs.writeFileSync("facebook.com.html", reportHtml);
 
   // `.lhr` is the Lighthouse Result as a JS object
   console.log("Report is done for", runnerResult.lhr.finalDisplayedUrl);

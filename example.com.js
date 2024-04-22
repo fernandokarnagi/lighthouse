@@ -14,7 +14,7 @@ import * as chromeLauncher from "chrome-launcher";
 
   // `.report` is the HTML report as a string
   const reportHtml = runnerResult.report;
-  fs.writeFileSync("lhreport.html", reportHtml);
+  fs.writeFileSync("example.com.html", reportHtml);
 
   // `.lhr` is the Lighthouse Result as a JS object
   console.log("Report is done for", runnerResult.lhr.finalDisplayedUrl);
